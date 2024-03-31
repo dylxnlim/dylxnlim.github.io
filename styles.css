@@ -1,0 +1,43 @@
+h1, h3 
+{
+    font-family: "Poppins";
+}
+
+a
+{
+    font-family: "Poppins";
+    color: black;
+    text-decoration: none;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    margin-left: 5px;
+}
+
+a:hover
+{
+    top: -5px;
+}
+
+p
+{
+    font-weight: bold;
+    font-family: "Quicksand";
+}
+
+img
+{
+    width: 20%;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.container
+{
+    background-color: grey;
+    padding: 15px;
+    width: 80%;
+    
+    border: 1px solid #ddd;
+    border-radius: 30px;
+}
