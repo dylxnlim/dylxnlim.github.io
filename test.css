@@ -1,0 +1,180 @@
+@supports (animation-timeline: view()){
+    @keyframes fade-in {
+    from { opacity: 0 }
+    to   { opacity: 1 }
+    }
+
+    @keyframes fade-out {
+    from { opacity: 1 }
+    to   { opacity: 0 }
+    }
+  
+    @keyframes shadow-in{
+    to { box-shadow: 0 10px 10px #0003 }
+    }
+
+    @keyframes showHide {
+        0% {width:100%}
+        40% {width:0%}
+        60% {width:0%;}
+        100% {width:100%;}
+    }
+
+    nav, nav > a{
+    animation: fade-in auto linear both;
+    animation-timeline: scroll();
+    animation-range: 0% 100px;
+    }
+
+    nav{
+    animation-name: shadow-in;
+    }
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 1rem;
+    background: white;
+}
+
+nav img{
+    width: 1.5rem;
+    height: auto;
+}
+
+html{
+    scroll-behavior: smooth;
+
+    block-size: 100%;
+    inline-size: 100%;
+    background-color: white;
+}
+
+body{
+    min-block-size: 100%;
+    min-inline-size: 100%;
+    margin: 0;
+    padding-block-end: 20vh;
+
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+
+    animation: fade-in ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+nav a{
+    position: relative;
+    margin-left: 2rem;
+    top: 0;
+
+    transition: top ease 0.5s;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover
+{
+    top: -2px;
+}
+
+.section{
+    height: 100vh;
+}
+.canvas{
+    width: 100%;
+    height: 100%;
+}
+
+.intro_container{
+    position: relative;
+    top: 30%;
+
+    text-align: center;
+    font-weight: 500;
+}
+
+#intro_profile{
+    display: none;
+    position: absolute;
+    top: -16rem;
+    left: 0;
+    opacity: 0%;
+    transition: 0.5s;
+}
+
+#intro_profile img{
+    width: 10rem;
+    height: auto;
+
+    border-radius: 10%;
+}
+
+#intro1{
+    font-size: 4rem;
+}
+
+#intro2{
+    font-size: 2rem;
+    color: grey;
+}
+
+#intro3{
+    color: grey;
+    margin-top: 25rem;
+}
+
+#intro1, #intro2{
+    animation: fade-out;
+    animation-timeline: scroll();
+    animation-range: 0% 25%;
+}
+
+#intro3{
+    animation: fade-out;
+    animation-timeline: scroll();
+    animation-range: 0% 65%;
+}
+
+#name{
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: orange;
+    opacity: 60%;
+}
+
+#name:hover{
+    opacity: 100%;
+    top: -10px;
+}
+
+#name:hover #intro_profile{
+    display: inline;
+    opacity: 100%;
+}
+
+.content_container{
+    margin: 8rem;
+    text-align: center;
+    max-inline-size: 50ch;
+    margin-inline: auto;
+    /* border: 3px solid #ddd;
+    border-radius: 3rem;
+    padding: 2.5rem; */
+}
+
+.content_container p{
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+#about2{
+    color: grey;
+}
