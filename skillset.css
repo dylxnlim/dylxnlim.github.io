@@ -1,0 +1,47 @@
+.title-card{
+    width: 45%;
+    background: white;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 1rem;
+    filter: drop-shadow(5px 2px 1px grey);
+}
+
+.title-card h1{
+    font-size: 200%;
+}
+
+.skillset-section{
+    margin-top: 1rem;
+}
+
+.skillset-gallery-cell {
+    margin-top: 1rem;
+    width: 350px;
+    height: 12rem;
+    margin-right: 10px;
+    background: white;
+    counter-increment: gallery-cell;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 1rem;
+    filter: drop-shadow(5px 2px 1px grey);
+}
+
+.skillset-gallery-cell a{
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    text-decoration: none;
+    color: black;
+}
+
+.skillset-gallery-cell a:hover
+{
+    top: -2px;
+    opacity: 75%;
+}
