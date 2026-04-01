@@ -1,1 +1,2 @@
-My goal is to create a unique portfolio to showcase my keen interest and passion in technology, software development and cloud.
+# My Portfolio
+I am creating this web application to showcase my passion for Technology.

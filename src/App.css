@@ -1,0 +1,52 @@
+.app-container {
+  width: 100vw;
+  height: 100dvh; /* Dynamic Viewport Height: Fixes mobile address bar issues */
+  position: relative;
+  background: radial-gradient(circle, #222 0%, #000 100%);
+}
+
+/* The 3D World Container */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
+/* The 2D UI that appears over the Gameboy */
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Clicks pass THROUGH the div to the 3D model */
+  z-index: 20;
+}
+
+/* The actual buttons/content inside the overlay */
+.screen-content {
+  pointer-events: auto; /* Re-enables clicking for buttons only */
+  text-align: center;
+  color: white; /* Classic Gameboy green-tinted text */
+}
+
+.screen-content button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    /* Start slightly smaller and 50px to the left */
+    transform: scale(0.9) translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    /* End at natural size and original position */
+    transform: scale(1) translateX(0);
+  }
+}
