@@ -1,0 +1,75 @@
+.about-portrait {
+  position: absolute;
+  top: 5%;             /* 5% from the top of the screen */
+  left: 50%;           /* Move to center line */
+  transform: translateX(-50%); /* Offset by half its own width to perfectly center */
+  
+  width: 60vw;         /* Exactly 40% of the screen width */
+  height: auto;        /* Maintain aspect ratio */
+  
+  /* Retro Aesthetics */
+  border: 4px solid #0f380f; 
+  box-shadow: 8px 8px 0px #306230; /* Hard "Pixel" Shadow */
+  image-rendering: pixelated;      /* Keeps the portrait sharp if it's low-res */
+  
+  z-index: 10;         /* Ensure it's above the background but below text if needed */
+}
+
+.gb-text-box.invisible-box {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gb-text-box.invisible-box::after {
+  content: none;     /* Removes the triangle completely */
+  display: none;     /* Ensures it takes up no space */
+  animation: none;   /* Stops the blink animation calculation */
+}
+
+/* Reset the background and border for the certificate container */
+.invisible-box {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  min-width: 0 !important; /* Allow it to shrink to the image size */
+}
+
+.about-aws-cert {
+  position: absolute;
+  top: 5%;             /* 5% from the top of the screen */
+  left: 50%;           /* Move to center line */
+  transform: translateX(-50%); /* Offset by half its own width to perfectly center */
+  
+  width: 30vw;         /* Exactly 40% of the screen width */
+  height: auto;        /* Maintain aspect ratio */
+  
+  /* Retro Aesthetics */
+  border: 4px solid #0f380f; 
+  box-shadow: 8px 8px 0px #306230; /* Hard "Pixel" Shadow */
+  image-rendering: pixelated;      /* Keeps the portrait sharp if it's low-res */
+  
+  z-index: 10;         /* Ensure it's above the background but below text if needed */
+}
+
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Centers horizontally (X-axis) */
+  justify-content: center;   /* Centers vertically (Y-axis) */
+  
+  height: 100vh;            /* Takes up full screen height */
+  width: 100vw;             /* Ensure it spans the full width */
+  
+  pointer-events: none;      /* Clicks pass through to the 3D scene */
+  
+  /* Optional: Add a gap between multiple text boxes */
+  gap: 20px; 
+  padding-top: 20vh;
+}

@@ -5,18 +5,20 @@ import Gameboy from './components/canvas/Gameboy'
 import PixelTransition from './components/ui/PixelTransition'
 import TextBox from './components/canvas/TextBox'
 import Typewriter from './components/ui/Typewriter'
+import About from './components/views/About'
+import Contact from './components/views/Contact'
 import './App.css'
 
 export default function App() {
   const [zoomed, setZoomed] = useState(false);
   const [isReadyForPixelTransition, setIsReadyForPixelTransition] = useState(false);
+  const [transitionState, setTransitionState] = useState(false);
   const [visibleBoxes, setVisibleBoxes] = useState({
     portfolio: true,
-    instruction: true,
-    aboutMe: true,
-    contact: true
+    instruction: true
   });
-  const wave1Finished = !visibleBoxes.portfolio && !visibleBoxes.welcome;
+  const [currentView, setCurrentView] = useState('menu');
+  const wave1Finished = !visibleBoxes.portfolio && !visibleBoxes.instruction;
   
   //Methods
   const handleZoomBegin = (e) => {
@@ -32,7 +34,11 @@ export default function App() {
       [id]: false
     }));
   };
-
+    const handleMenuClick = (viewName) => {
+    // Fade out menu, then set the new view
+    setCurrentView(viewName);
+    setTransitionState(true);
+  };
   return (
     <div className="app-container">
       {/* The 3D World */}
@@ -59,30 +65,32 @@ export default function App() {
             {/* --- WAVE 1 --- */}
             {visibleBoxes.portfolio && (
               <TextBox onClick={() => handleHideBox('portfolio')}>
-                <h1><Typewriter text={"My Portfolio"} delay={0.1} startDelay={1.2}/></h1>
+                <h1><Typewriter text={"Dylan's Portfolio"} delay={0.08} startDelay={1.2}/></h1>
               </TextBox>
             )}
             {visibleBoxes.instruction && (
               <TextBox onClick={() => handleHideBox('instruction')}>
-                <span><Typewriter text={"Welcome to the site. Click on the text boxes to proceed!"} delay={0.05} startDelay={2}/></span>
+                <span><Typewriter text={"Welcome to the site. Click on the text boxes to proceed!"} delay={0.02} startDelay={2.4}/></span>
               </TextBox>
             )}
             {/* --- WAVE 2 --- */}
-            {wave1Finished && (
-            <>
-              {visibleBoxes.aboutMe && (
-                <TextBox onClick={() => handleHideBox('aboutMe')}>
-                  <h1><Typewriter text={"About Me"} startDelay={0.2}/></h1>
+            {wave1Finished && currentView === 'menu' && (
+              <>
+                <TextBox onClick={() => handleMenuClick('about')}>
+                  <h1><Typewriter text={"About Me"} delay={0.08} startDelay={1}/></h1>
                 </TextBox>
-              )}
-
-              {visibleBoxes.contact && (
-                <TextBox onClick={() => handleHideBox('contact')}>
-                  <h1><Typewriter text={"Get in touch?"} startDelay={0.5}/></h1>
+                <TextBox onClick={() => handleMenuClick('portfolio')}>
+                  <h1><Typewriter text={"My Projects"} delay={0.08} startDelay={1}/></h1>
                 </TextBox>
-              )}
-            </>
-          )}
+                <TextBox onClick={() => handleMenuClick('contact')}>
+                  <h1><Typewriter text={"Get in touch?"} delay={0.08} startDelay={1}/></h1>
+                </TextBox>
+              </>
+            )}
+            {/* --- Sub-Views --- */}
+            {currentView === 'about' && <About onBack={() => setCurrentView('menu')} />}
+            {currentView === 'portfolio' && <Portfolio onBack={() => setCurrentView('menu')} />}
+            {currentView === 'contact' && <Contact onBack={() => setCurrentView('menu')} />}
           </div>
         </div>
       )}
