@@ -69,7 +69,7 @@ const About = ({ onBack }) => {
                         )}
                         {visibleBoxes.experience2 && (
                             <TextBox onClick={() => handleHideBox('experience2')}>
-                                <h2><Typewriter text={"I also built a Kubernetes pipeline to automate testing, deployment and monitoring of an application for key stakeholders."} delay={0.025} startDelay={3}/></h2>
+                                <h2><Typewriter text={"I've also leveraged Kubernetes cluster to automate testing, deployment and monitoring of an application for key stakeholders."} delay={0.025} startDelay={3}/></h2>
                             </TextBox>
                         )}
                     </>

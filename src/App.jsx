@@ -6,6 +6,7 @@ import PixelTransition from './components/ui/PixelTransition'
 import TextBox from './components/canvas/TextBox'
 import Typewriter from './components/ui/Typewriter'
 import About from './components/views/About'
+import Portfolio from './components/views/Portfolio'
 import Contact from './components/views/Contact'
 import './App.css'
 

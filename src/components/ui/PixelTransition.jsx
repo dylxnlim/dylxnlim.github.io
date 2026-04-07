@@ -15,7 +15,6 @@ const PixelTransition = ({ isVisible }) => {
     const pixelWidthPercent = 5;
     const delayMultiplier = 0.015;
 
-    // Use useMemo so we dont calculate grid math on every frame
     const { numBlocks, numOfCols } = useMemo(() => getNumBlocks(pixelWidthPercent), []);
 
     const pixelVariants = {

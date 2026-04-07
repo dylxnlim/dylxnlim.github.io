@@ -1,18 +1,16 @@
 .gb-text-box {
-  background-color: #e0f8d0; /* Classic "Off" Screen Color */
-  border: 4px solid #0f380f; /* Darkest Green */
+  background-color: #e0f8d0;
+  border: 4px solid #0f380f;
   padding: 16px;
   position: relative;
   display: inline-block;
   min-width: 250px;
   max-width: 90%;
   
-  /* The "Double Border" Effect */
   box-shadow: 
     inset 0 0 0 2px #e0f8d0, 
     inset 0 0 0 4px #306230;
 
-  /* Fly-in Animation */
   opacity: 0;
   animation: gbTextFlyIn 0.3s ease-out 1s forwards;
 }
@@ -39,24 +37,21 @@
   max-width: 90%;
   box-sizing: border-box;
   
-  /* Typography & Wrapping */
   color: #0f380f;
   font-family: 'PixelifySans', 'Courier New', Courier, monospace;
   line-height: 1.4;
   overflow-wrap: break-word;
   word-break: break-word;
 
-  /* Aesthetics */
   box-shadow: 
     inset 0 0 0 2px #e0f8d0, 
     inset 0 0 0 4px #306230;
 
-  /* Animation */
   opacity: 0;
   animation: gbTextFlyIn 0.3s ease-out 1s forwards;
 }
 
-/* The "More Text" Blinking Arrow */
+/* blinking arrow */
 .gb-text-box::after {
   content: '▼';
   position: absolute;
