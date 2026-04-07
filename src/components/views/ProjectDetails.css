@@ -1,0 +1,15 @@
+.details-header {
+    color: #0f380f;
+    font-family: 'PixelifySans', 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 5%;
+    left: 50%;       
+    transform: translateX(-50%);
+    width: 100vw;
+}
+
+.details-textbox {
+    color: #e0f8d0;
+    background-color: #0f380f;
+    border: 4px solid #0f380f; 
+}

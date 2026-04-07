@@ -1,0 +1,54 @@
+.carousel-window {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  cursor: grab;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.items-icon-box {
+  width: 200px; 
+  height: 200px;
+  background-color: #306230;
+  border: 4px solid #0f380f;
+  box-shadow: 8px 8px 0px #0f380f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  image-rendering: pixelated;
+}
+
+.items-pixel-icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.items-title-box {
+  min-width: 200px;
+  text-align: center;
+}

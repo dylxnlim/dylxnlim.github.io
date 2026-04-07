@@ -1,0 +1,24 @@
+.pixel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pixel-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pixel-block {
+  width: 100%;
+  background-color: #d2e665;
+  pointer-events: none;
+}

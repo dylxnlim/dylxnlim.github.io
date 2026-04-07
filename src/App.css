@@ -1,0 +1,47 @@
+.app-container {
+  width: 100vw;
+  height: 100dvh;
+  position: relative;
+  background: radial-gradient(circle, #222 0%, #000 100%);
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; 
+  z-index: 20;
+}
+
+.screen-content {
+  pointer-events: auto; 
+  text-align: center;
+  color: white;
+}
+
+.screen-content button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
